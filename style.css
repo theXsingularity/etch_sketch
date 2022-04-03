@@ -1,7 +1,14 @@
 #grid {
-    width: 960px;
-    display: grid;
-    
+    margin: auto;
+    border: 10px solid black;
+    display: inline-grid;
+   
   }
+
+.square {
+  height: 25px;
+  width: 25px;
+  
+}
   
   
