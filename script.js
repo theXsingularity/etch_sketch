@@ -1,21 +1,44 @@
-const grid = document.body;
 let square = document.createElement('div');
 square.classList.add('square');
 square.textContent = "X";
 
 
+let grid = document.getElementById('grid');
 function createGrid(num) {
-    for(i=0; i<num; i++){
-        let row = document.createElement('div');
-        row.className = "row";
-        row.textContent = "Y";
-        grid.appendChild(row.cloneNode(true));
-        for(x = 1; x<=num; x++) {
-            grid.appendChild(square.cloneNode(true));
-        }
-    
-    }
+  document.getElementById("grid").style.gridTemplateColumns = `repeat(${num}, 1%)`;
+  for(i=0; i<num*num; i++){
+          grid.appendChild(square.cloneNode(true));    
+  }
 }
 
-createGrid(2);
 
+grid.addEventListener('click', changeColor )
+
+
+function  changeColor(event) {
+    console.log(event.target);
+    event.target.style.backgroundColor = 'green';
+  }
+
+
+createGrid(16);
+
+
+
+
+
+
+
+
+
+
+/*
+let btn = document.getElementById('btn');
+let item = document.getElementById("button");
+item.addEventListener("mouseover", func, false);
+
+function func()
+{  
+   item.setAttribute("style", "background-color:blue;")
+}
+*/
